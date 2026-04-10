@@ -3,7 +3,7 @@ import java.sql.*;
 import java.util.*;
 public class EmpMain {
 
-	public static void main(String[] args) throws Exception{
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		Scanner sc= new Scanner(System.in);
 		System.out.println("직위 입력:");
