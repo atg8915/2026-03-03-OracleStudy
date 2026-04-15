@@ -16,5 +16,5 @@
 | 일차 | 주제 | 링크 |
 |------|------|------|
 | Day 01 | DB 기초, DBMS, 관계형 모델, SELECT | [📄 보기](./day_01.md) |
-
+| Day 02 | WHERE 조건 연산자, ORDER BY, 내장 함수, GROUP BY | [📄 보기](./day02.md) |
 
