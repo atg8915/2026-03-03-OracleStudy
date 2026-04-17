@@ -1,5 +1,25 @@
 # 📘 Day 04 — JOIN / SubQuery
 
+## 0. 핵심 용어 & 문법 빠른 참조
+
+| 구문 | 예시 | 결과 |
+|------|------|------|
+| `INNER JOIN` | `FROM A JOIN B ON A.id = B.id` | 두 테이블 일치하는 행만 |
+| `LEFT OUTER JOIN` | `FROM A LEFT OUTER JOIN B ON A.id = B.id` | A 전체 + B 일치 (없으면 NULL) |
+| `RIGHT OUTER JOIN` | `FROM A RIGHT OUTER JOIN B ON A.id = B.id` | B 전체 + A 일치 (없으면 NULL) |
+| `FULL OUTER JOIN` | `FROM A FULL OUTER JOIN B ON A.id = B.id` | 양쪽 전체 (없으면 NULL) |
+| `SELF JOIN` | `FROM emp e1, emp e2 WHERE e1.mgr = e2.empno` | 같은 테이블 내 계층 연결 |
+| `NATURAL JOIN` | `FROM emp NATURAL JOIN dept` | 동일 컬럼명 자동 연결 |
+| `JOIN ~ USING` | `FROM emp JOIN dept USING(deptno)` | 지정 컬럼명으로 연결 |
+| 단일행 서브쿼리 | `WHERE sal = (SELECT MAX(sal) FROM emp)` | 결과 1개, 비교 연산자 사용 |
+| 다중행 `IN` | `WHERE deptno IN (SELECT deptno FROM dept)` | 목록 중 일치하는 값 전체 |
+| 다중행 `ANY` | `WHERE sal > ANY (SELECT sal FROM emp)` | 최솟값보다 크면 참 |
+| 다중행 `ALL` | `WHERE sal > ALL (SELECT sal FROM emp)` | 최댓값보다 크면 참 |
+| 인라인 뷰 | `FROM (SELECT * FROM emp ORDER BY sal DESC)` | 서브쿼리를 테이블처럼 사용 |
+| 스칼라 서브쿼리 | `SELECT ename, (SELECT dname FROM dept WHERE deptno = e.deptno)` | 서브쿼리를 컬럼처럼 사용 |
+| `EXISTS` | `WHERE EXISTS (SELECT * FROM orders WHERE id = cs.id)` | 존재하면 TRUE, IN보다 빠름 |
+| `ROWNUM` | `WHERE rownum <= 5` | 상위 N개 행 추출 |
+
 ## 1. JOIN 개요
 
 > 정규화로 나뉜 테이블을 연결해 필요한 데이터를 추출하는 과정
