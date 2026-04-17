@@ -18,4 +18,4 @@
 | Day 01 | DB 기초, DBMS, 관계형 모델, SELECT | [📄 보기](./day_01.md) |
 | Day 02 | WHERE 조건 연산자, ORDER BY, 내장 함수, GROUP BY | [📄 보기](./day_02.md) |
 | Day 03 | 단일행 함수 (문자/숫자/날짜/변환/기타), GROUP BY, JOIN | [📄 보기](./day_03.md) |
-
+| Day 04 | JOIN 종류, 서브쿼리 (단일행/다중행/인라인뷰/스칼라) | [📄 보기](./day_04.md) |
