@@ -20,3 +20,4 @@
 | Day 03 | 단일행 함수 (문자/숫자/날짜/변환/기타), GROUP BY, JOIN | [📄 보기](./day_03.md) |
 | Day 04 | JOIN 종류, 서브쿼리 (단일행/다중행/인라인뷰/스칼라) | [📄 보기](./day_04.md) |
 | Day 05 | DDL (CREATE/ALTER/DROP), 데이터형, 제약조건, DML (INSERT/UPDATE/DELETE) | [📄 보기](./day_05.md) |
+| Day 06 | ROWNUM, 서브쿼리 심화 (스칼라/인라인뷰), VIEW | [📄 보기](./day_06.md) |
