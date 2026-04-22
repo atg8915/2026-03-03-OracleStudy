@@ -21,3 +21,4 @@
 | Day 04 | JOIN 종류, 서브쿼리 (단일행/다중행/인라인뷰/스칼라) | [📄 보기](./day_04.md) |
 | Day 05 | DDL (CREATE/ALTER/DROP), 데이터형, 제약조건, DML (INSERT/UPDATE/DELETE) | [📄 보기](./day_05.md) |
 | Day 06 | ROWNUM, 서브쿼리 심화 (스칼라/인라인뷰), VIEW | [📄 보기](./day_06.md) |
+| Day 07 | INDEX (개념/생성/삭제/리빌드), B-Tree, SQL 전체 문법 총정리 | [📄 보기](./day_07.md) |
