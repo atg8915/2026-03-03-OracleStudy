@@ -98,3 +98,72 @@ Java 핵심
 
 > ⚠️ DB URL, 계정정보(ID/PW)는 절대 GitHub에 올리지 말 것
 > ⚠️ `ps.close()` / `conn.close()` 자원 해제 필수 — `finally` 블록에서 처리
+> 
+---
+
+## 5. 페이징 — OFFSET FETCH
+
+```sql
+-- Oracle 12c 이상 (권장)
+SELECT mno, title, grade, director
+FROM movie
+OFFSET 0 ROWS FETCH NEXT 20 ROWS ONLY;
+-- OFFSET (시작번호) = (page - 1) * 20
+-- Java에서 page를 매개변수로 받아 계산
+
+-- MySQL / MariaDB
+SELECT * FROM movie LIMIT 0, 20;
+```
+
+---
+
+## 6. 주요 SELECT 패턴 (JDBC 연동)
+
+```sql
+-- 목록 (페이징)
+SELECT mno, title, grade, actor, director, genre
+FROM movie
+ORDER BY mno
+OFFSET 0 ROWS FETCH NEXT 20 ROWS ONLY;
+
+-- 상세보기 (PK로 1개 조회)
+SELECT mno, title, grade, actor, director, genre
+FROM movie WHERE mno = 100;
+
+-- 검색 (LIKE)
+SELECT mno, title, grade, actor, director, genre
+FROM movie WHERE title LIKE '%비밀%';
+
+-- 검색 (정규식)
+SELECT mno, title, grade, actor, director, genre
+FROM movie WHERE REGEXP_LIKE(title, '비밀');
+
+-- 통계 (GROUP BY)
+SELECT grade, COUNT(*)
+FROM movie
+GROUP BY grade
+ORDER BY grade;
+```
+
+### 검색 컬럼별 패턴 (콤보박스 연동)
+| 검색 컬럼 | SQL |
+|-----------|-----|
+| 제목 | `WHERE title LIKE '%검색어%'` |
+| 장르 | `WHERE genre LIKE '%액션%'` |
+| 등급 | `WHERE grade LIKE '%12%'` |
+| 배우 | `WHERE actor LIKE '%송강호%'` |
+
+---
+
+## 7. ALTER로 제약조건 추가
+
+```sql
+-- 제약조건 추가 (FK, PK, CK, UK)
+ALTER TABLE movie ADD CONSTRAINT movie_mno_pk PRIMARY KEY(mno);
+
+-- NOT NULL, DEFAULT 변경
+ALTER TABLE movie MODIFY title VARCHAR2(100) NOT NULL;
+```
+
+> 💡 `ADD` → PK / FK / UK / CK 추가
+> 💡 `MODIFY` → NOT NULL / DEFAULT 변경
