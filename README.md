@@ -24,3 +24,4 @@
 | Day 07 | INDEX (개념/생성/삭제/리빌드), B-Tree, SQL 전체 문법 총정리 | [📄 보기](./day_07.md) |
 | Day 08 | PL/SQL (변수/제어문/반복문/커서) | [📄 보기](./day_08.md) |
 | Day 09 | PL/SQL 심화 (FUNCTION / PROCEDURE / TRIGGER) | [📄 보기](./day_09.md) |
+| Day 10 | Java + Oracle 연동 (JDBC), VO/List/기능 설계 | [📄 보기](./day_10.md) |
