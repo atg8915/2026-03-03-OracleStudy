@@ -25,3 +25,4 @@
 | Day 08 | PL/SQL (변수/제어문/반복문/커서) | [📄 보기](./day_08.md) |
 | Day 09 | PL/SQL 심화 (FUNCTION / PROCEDURE / TRIGGER) | [📄 보기](./day_09.md) |
 | Day 10 | Java + Oracle 연동 (JDBC), VO/List/기능 설계 | [📄 보기](./day_10.md) |
+| Day 11 | 데이터 모델링, ER 다이어그램, 요구사항 분석 | [📄 보기](./day_11.md) |
